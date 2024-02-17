@@ -1,29 +1,69 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Badge from "../components/Badge.astro";
+import SocialPill from "../components/SocialPill.astro";
+import LinkedInIcon from "../icons/LinkedIn.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import EmailIcon from "../icons/Email.astro";
+import DiscordIcon from "../icons/Discord.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Experience from "../components/Experience/Experience.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout
+	title="DiegoT4l Portfolio - Desarrollador y Programador web y UI"
+	description=`Desarrollador web y UI con más de 2 años de experiencia. 
+Especializado en creación de webs e interfaces únicas y atractivas.
+Conoce más sobre mi trabajo y proyectos en mi portafolio.
+`
+>
 	<main>
-		<section class="w-full lg:w-[740px] mx-auto py-44">
+		<SectionContainer>
 			<h1
-				class="text-white text-5xl font-bold flex justify-center flex-row gap-x-4 pb-10"
+				class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10"
 			>
 				Hey, Soy DiegoT4l!
-				<a
+				<Badge
 					href="https://www.linkedin.com/in/diegot4l/"
-					target="_blank"
-					rel="noopener"
 					class="flex justify-center items-center"
 				>
-					<Badge>Disponible</Badge>
-				</a>
+					Disponible
+				</Badge>
 			</h1>
-			<h2 class="text-xl opacity-80">
-				<span>+1 año de experiencia. </span><span>Desarrollador Web/UI. </span>
-				<span>México, CDMX. </span><span>Especializado en creación de sitios web e interfaces de usuario
-				únicas y atractivas.</span>
+			<h2 class="text-2xl text-wrap">
+				<span>+2 Años de Experiencia.</span><span
+					class="text-yellow-200/90"
+					>Desarrollador Web/UI.
+				</span>
+				<span class="text-red-200/90">México, CDMX.</span><span
+					class="opacity-75"
+					>Especializado en creación de webs e interfaces únicas y
+					atractivas.</span
+				>
 			</h2>
-		</section>
+
+			<nav class="flex gap-x-4 mt-8">
+				<SocialPill href="https://www.linkedin.com/in/diegot4l/">
+					<LinkedInIcon class="size-6" />
+					<span>LinkedIn</span>
+				</SocialPill>
+				<SocialPill href="https://github.com/DiegoT4l">
+					<GitHubIcon class="size-6" />
+					<span>GitHub</span>
+				</SocialPill>
+				<SocialPill href="https://discord.gg/EcBV6FkCtd">
+					<DiscordIcon class="size-6" />
+					<span>Discord</span>
+				</SocialPill>
+				<SocialPill href="https://github.com/DiegoT4l">
+					<EmailIcon class="size-6" />
+					<span>Correo</span>
+				</SocialPill>
+			</nav>
+		</SectionContainer>
+
+		<SectionContainer>
+			<Experience />
+		</SectionContainer>
 	</main>
 </Layout>

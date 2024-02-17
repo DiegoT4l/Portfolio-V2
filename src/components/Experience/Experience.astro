@@ -1,0 +1,47 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+    {
+        title: "Senior Software Engineer",
+        company: "Google",
+        date: "June 2019 - Present",
+        description:
+            "I work on the Google Photos team, building and maintaining the web client and the iOS app.",
+    },
+    {
+        title: "Software Engineer",
+        company: "Facebook",
+        date: "June 2016 - June 2019",
+        description:
+            "I worked on the Events team, building and maintaining the web client and the iOS app.",
+        link: "https://www.facebook.com",
+    },
+    {
+        title: "Software Engineering Intern",
+        company: "Microsoft",
+        date: "June 2015 - August 2015",
+        description:
+            "I worked on the Outlook for Mac team, building and maintaining the iOS app.",
+        link: "https://www.microsoft.com",
+    },
+    {
+        title: "Software Engineering Intern",
+        company: "Microsoft",
+        date: "June 2015 - August 2015",
+        description:
+            "I worked on the Outlook for Mac team, building and maintaining the iOS app.",
+        link: "https://www.microsoft.com",
+    },
+];
+---
+
+<div>
+    {
+        EXPERIENCE.map((experience) => (
+            <div class="block max-w-sm p-6 mx-4 my-10 bg-white/5 border border-gray-200/5 rounded-lg shadow">
+                <ExperienceItem {...experience} />
+            </div>
+        ))
+    }
+</div>
