@@ -5,9 +5,10 @@ import SocialPill from "../components/SocialPill.astro";
 import LinkedInIcon from "../icons/LinkedIn.astro";
 import GitHubIcon from "../icons/GitHub.astro";
 import EmailIcon from "../icons/Email.astro";
-import DiscordIcon from "../icons/Discord.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Experience from "../components/Experience/Experience.astro";
+import BriefIcon from "../icons/Brief.astro";
+import CheckIcon from "../icons/Check.astro";
 ---
 
 <Layout
@@ -18,7 +19,7 @@ Conoce más sobre mi trabajo y proyectos en mi portafolio.
 `
 >
 	<main>
-		<SectionContainer>
+		<SectionContainer class="py-44 pb-24">
 			<h1
 				class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10"
 			>
@@ -31,11 +32,11 @@ Conoce más sobre mi trabajo y proyectos en mi portafolio.
 				</Badge>
 			</h1>
 			<h2 class="text-2xl text-wrap">
-				<span>+2 Años de Experiencia.</span><span
+				<span>+2 Años de Experiencia. </span><span
 					class="text-yellow-200/90"
 					>Desarrollador Web/UI.
 				</span>
-				<span class="text-red-200/90">México, CDMX.</span><span
+				<span class="text-red-200/90">México, CDMX. </span><span
 					class="opacity-75"
 					>Especializado en creación de webs e interfaces únicas y
 					atractivas.</span
@@ -51,19 +52,32 @@ Conoce más sobre mi trabajo y proyectos en mi portafolio.
 					<GitHubIcon class="size-6" />
 					<span>GitHub</span>
 				</SocialPill>
-				<SocialPill href="https://discord.gg/EcBV6FkCtd">
-					<DiscordIcon class="size-6" />
-					<span>Discord</span>
-				</SocialPill>
-				<SocialPill href="https://github.com/DiegoT4l">
+				<SocialPill to="lopez.diiego.107@gmail.com">
 					<EmailIcon class="size-6" />
-					<span>Correo</span>
+					<span>diegot4l@gmail.com</span>
 				</SocialPill>
 			</nav>
 		</SectionContainer>
 
 		<SectionContainer>
-			<Experience />
+			<div class="flex">
+				<BriefIcon class="size-9 mx-4" />
+				<h2 class="text-3xl font-semibold mb-6">Experiencia Laboral</h2>
+			</div>
+			<hr />
+			<div class="flex justify-center">
+				<Experience />
+			</div>
+		</SectionContainer>
+
+		<SectionContainer>
+			<div class="flex">
+				<CheckIcon class="size-9 mx-4" />
+				<h2 class="text-3xl font-semibold mb-6">Tech Stack</h2>
+			</div>
+			<hr />
+			<div class="flex justify-center">
+			</div>
 		</SectionContainer>
 	</main>
 </Layout>

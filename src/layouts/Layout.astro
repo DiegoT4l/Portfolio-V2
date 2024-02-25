@@ -37,6 +37,16 @@ const { title, description } = Astro.props;
 		flex-direction: column;
 		min-height: 100vh;
 	}
+	hr {
+		height: 0.1rem;
+		border: 0;
+		background-image: linear-gradient(
+			to right,
+			rgba(0, 0, 0, 0),
+			hsl(190, 68%, 53%),
+			rgba(0, 0, 0, 0)
+		);
+	}
 	.backg {
 		background-color: #050505;
 		background-image: radial-gradient(
