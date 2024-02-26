@@ -8,6 +8,7 @@ import EmailIcon from "../icons/Email.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Experience from "../components/Experience/Experience.astro";
 import BriefIcon from "../icons/Brief.astro";
+import CometIcon from "../icons/Comet.astro";
 import CheckIcon from "../icons/Check.astro";
 ---
 
@@ -18,10 +19,10 @@ Especializado en creación de webs e interfaces únicas y atractivas.
 Conoce más sobre mi trabajo y proyectos en mi portafolio.
 `
 >
-	<main>
-		<SectionContainer class="py-44 pb-24">
+	<main class="px-4">
+		<SectionContainer class="py-32 md:py-44 pb-24">
 			<h1
-				class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10"
+				class="text-white mx-auto text-2xl md:text-5xl font-bold flex flex-row gap-x-4 pb-6 md:pb-10"
 			>
 				Hey, Soy DiegoT4l!
 				<Badge
@@ -31,53 +32,86 @@ Conoce más sobre mi trabajo y proyectos en mi portafolio.
 					Disponible
 				</Badge>
 			</h1>
-			<h2 class="text-2xl text-wrap">
-				<span>+2 Años de Experiencia. </span><span
+			<h2 class="mx-auto text-lg md:text-2xl text-wrap max-w-[70rem]">
+				<span>+2 Años de Experiencia.</span><span
 					class="text-yellow-200/90"
 					>Desarrollador Web/UI.
 				</span>
-				<span class="text-red-200/90">México, CDMX. </span><span
+				<span class="text-red-200/90">México, CDMX.</span><span
 					class="opacity-75"
 					>Especializado en creación de webs e interfaces únicas y
 					atractivas.</span
 				>
 			</h2>
 
-			<nav class="flex gap-x-4 mt-8">
+			<nav class="flex gap-4 mt-8 flex-wrap">
 				<SocialPill href="https://www.linkedin.com/in/diegot4l/">
-					<LinkedInIcon class="size-6" />
+					<LinkedInIcon class="size-4 md:size-6" />
 					<span>LinkedIn</span>
 				</SocialPill>
 				<SocialPill href="https://github.com/DiegoT4l">
-					<GitHubIcon class="size-6" />
+					<GitHubIcon class="size-4 md:size-6" />
 					<span>GitHub</span>
 				</SocialPill>
-				<SocialPill to="lopez.diiego.107@gmail.com">
-					<EmailIcon class="size-6" />
+				<SocialPill href="mailto:lopez.diiego.107@gmail.com">
+					<EmailIcon class="size-4 md:size-6" />
 					<span>diegot4l@gmail.com</span>
 				</SocialPill>
 			</nav>
 		</SectionContainer>
 
-		<SectionContainer>
-			<div class="flex">
-				<BriefIcon class="size-9 mx-4" />
-				<h2 class="text-3xl font-semibold mb-6">Experiencia Laboral</h2>
+		<SectionContainer class="pb-24">
+			<h2 class="flex text-3xl font-semibold mb-6 gap-x-3 items-center">
+				<CometIcon class="size-8" />
+				Tech Stack
+			</h2>
+			<hr />
+			<div class="flex justify-center">
+				<div class="grid grid-cols-2 gap-4 mt-8">
+					<div class="flex flex-col gap-2">
+						<h3 class="text-2xl font-semibold">Frontend</h3>
+						<ul class="list-disc list-inside">
+							<li>HTML5</li>
+							<li>CSS3</li>
+							<li>JavaScript</li>
+							<li>React</li>
+							<li>Next.js</li>
+						</ul>
+					</div>
+					<div class="flex flex-col gap-2">
+						<h3 class="text-2xl font-semibold">Backend</h3>
+						<ul class="list-disc list-inside">
+							<li>Node.js</li>
+							<li>Express.js</li>
+							<li>MongoDB</li>
+							<li>MySQL</li>
+							<li>PostgreSQL</li>
+							<li>GraphQL</li>
+							<li>RESTful APIs</li>
+						</ul>
+					</div>
+				</div>
 			</div>
+		</SectionContainer>
+
+		<SectionContainer id="experience" class="pb-24">
+				
+				<h2 class="flex items-center gap-x-3 text-3xl font-semibold mb-6">
+					<BriefIcon class="size-8" />
+					Experiencia Laboral
+				</h2>
 			<hr />
 			<div class="flex justify-center">
 				<Experience />
 			</div>
 		</SectionContainer>
 
-		<SectionContainer>
-			<div class="flex">
-				<CheckIcon class="size-9 mx-4" />
-				<h2 class="text-3xl font-semibold mb-6">Tech Stack</h2>
-			</div>
+		<SectionContainer id="projects" class="pb-24">
+			<h2 class="flex text-3xl font-semibold mb-6 gap-x-3 items-center">
+				<CheckIcon class="size-8" />
+				Proyectos Personales
+			</h2>
 			<hr />
-			<div class="flex justify-center">
-			</div>
 		</SectionContainer>
 	</main>
 </Layout>

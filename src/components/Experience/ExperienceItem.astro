@@ -1,33 +1,32 @@
 ---
 interface Props {
     title: string;
-    company: string;
     date: string;
     description: string;
     link?: string;
 }
 
-const { title, company, date, description, link } = Astro.props;
+const { title, date, description, link } = Astro.props;
 ---
 
 <h3
-    class="mb-2 text-2xl font-bold tracking-tight text-blue-200 dark:text-white"
+    class="mb-2 text-2xl font-bold tracking-tight text-blue-200 dark:text-white text-wrap"
 >
-    {title + " - " + company}
+    {title}
 </h3>
 <time
-    class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+    class="mb-1 text-sm font-normal leading-none text-red-200/70"
 >
     {date}
 </time>
-<p class="font-normal text-gray-100 dark:text-gray-400">
+<p class="font-normal text-gray-100 dark:text-gray-400 text-pretty">
     {description}
 </p>
 {
     link && (
         <a
             href={link}
-            class="inline-flex items-center mt-4 px-4 py-2 text-sm font-medium text-gray-100 bg-gray-100/5 border border-gray-200 rounded-lg hover:bg-gray-100/10 hover:text-gray-400 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-gray-400"
+            class="inline-flex items-center mt-4 px-4 py-2 text-sm font-medium text-yellow-200/90 bg-gray-100/5 border border-yellow-200/90 rounded-lg hover:bg-gray-100/10 hover:text-yellow-200/70 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-gray-400"
             target="_blank"
             rel="noopener noreferrer"
             >
