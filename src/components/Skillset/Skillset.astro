@@ -1,0 +1,52 @@
+---
+import Tooltip from "./tooltip.astro"
+import SkillsetItem from "./SkillsetItem.astro"
+import HTMLIcon from "../../icons/HTML.astro"
+import CSSIcon from "../../icons/CSS.astro"
+
+const SKILLSET = [
+    {
+        icon: <HTMLIcon />,
+        Tooltip: 'HTML',
+    },
+    {
+        icon: <CSSIcon />,
+        Tooltip: 'CSS',
+    },
+    {
+        icon: 'JavaScript',
+        Tooltip: 'JavaScript',
+    },
+    {
+        icon: 'React',
+        Tooltip: 'React',
+    },
+    {
+        icon: 'Nodejs',
+        Tooltip: 'Node.js',
+    },
+    {
+        icon: getIcon('Git'),
+        Tooltip: 'Git',
+    },
+]
+
+const getIcon = async (icon: string) => {
+    const iconComponent = await fetch(`../../icons/${icon}.astro`);
+    return iconComponent;
+}
+---
+
+<div>
+    {
+        SKILLSET.map((data, index) => (
+            <div data-tooltip-target="tooltip-top" data-tooltip-placement="top">
+                <SkillsetItem icon={data.icon} />
+            </div>
+                <div id="tooltip-top" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                    {data.Tooltip}
+                    <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
+        ))
+    }
+</div>

@@ -1,0 +1,11 @@
+---
+interface Props {
+    icon: string;
+}
+
+const { icon } = Astro.props;
+
+import SkillIcon from `../../icons/${icon}.astro`;
+---
+
+<SkillIcon />

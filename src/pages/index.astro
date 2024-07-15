@@ -10,6 +10,7 @@ import Experience from "../components/Experience/Experience.astro";
 import BriefIcon from "../icons/Brief.astro";
 import CometIcon from "../icons/Comet.astro";
 import CheckIcon from "../icons/Check.astro";
+import Projects from "../components/PersonalProjects/Projects.astro";
 ---
 
 <Layout
@@ -24,7 +25,7 @@ Conoce más sobre mi trabajo y proyectos en mi portafolio.
 			<h1
 				class="text-white mx-auto text-2xl md:text-5xl font-bold flex flex-row gap-x-4 pb-6 md:pb-10"
 			>
-				Hey, Soy DiegoT4l!
+				Hey, Soy <span>DiegoT4l!</span>
 				<Badge
 					href="https://www.linkedin.com/in/diegot4l/"
 					class="flex justify-center items-center"
@@ -60,40 +61,6 @@ Conoce más sobre mi trabajo y proyectos en mi portafolio.
 			</nav>
 		</SectionContainer>
 
-		<SectionContainer class="pb-24">
-			<h2 class="flex text-3xl font-semibold mb-6 gap-x-3 items-center">
-				<CometIcon class="size-8" />
-				Tech Stack
-			</h2>
-			<hr />
-			<div class="flex justify-center">
-				<div class="grid grid-cols-2 gap-4 mt-8">
-					<div class="flex flex-col gap-2">
-						<h3 class="text-2xl font-semibold">Frontend</h3>
-						<ul class="list-disc list-inside">
-							<li>HTML5</li>
-							<li>CSS3</li>
-							<li>JavaScript</li>
-							<li>React</li>
-							<li>Next.js</li>
-						</ul>
-					</div>
-					<div class="flex flex-col gap-2">
-						<h3 class="text-2xl font-semibold">Backend</h3>
-						<ul class="list-disc list-inside">
-							<li>Node.js</li>
-							<li>Express.js</li>
-							<li>MongoDB</li>
-							<li>MySQL</li>
-							<li>PostgreSQL</li>
-							<li>GraphQL</li>
-							<li>RESTful APIs</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</SectionContainer>
-
 		<SectionContainer id="experience" class="pb-24">
 				
 				<h2 class="flex items-center gap-x-3 text-3xl font-semibold mb-6">
@@ -112,6 +79,7 @@ Conoce más sobre mi trabajo y proyectos en mi portafolio.
 				Proyectos Personales
 			</h2>
 			<hr />
+			<Projects />
 		</SectionContainer>
 	</main>
 </Layout>

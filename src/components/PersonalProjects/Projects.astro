@@ -1,0 +1,64 @@
+---
+import styles from "./Projects.module.css";
+
+const PROJECTS = [
+    {
+        title: "Generador de Llaves de Licencia",
+        description:
+            "Generador de llaves de licencia para el software de la empresa.",
+        image: "/project_licenses.webp",
+        link: "https://licencias.diegot4l.com/",
+        github: "https://github.com/DiegoT4l/License-Key-Generator",
+        tags: ["tag1", "tag2", "tag3"],
+    },
+    {
+        title: "Blog de Café",
+        description: "Blog de café con diseño responsivo.",
+        image: "/project_blogcafe.webp",
+        link: "https://blogcafe.diegot4l.com/",
+        github: "https://github.com/DiegoT4l/BlogdeCafe",
+        tags: ["tag1", "tag2", "tag3"],
+    },
+];
+---
+
+<div>
+    {
+        PROJECTS.map((project) => {
+            <div>
+                <div class={styles.cardContainer}>
+                    <div class={styles.card}>
+                        <div class={styles.frontContent}>
+                            <img src={project.image} alt={project.title} />
+                        </div>
+                        <div class={styles.content}>
+                            <h3 class={styles.heading}>{project.title}</h3>
+                            <ul class={styles.tags}>
+                                {project.tags.map((tag) => {
+                                    <li>{tag}</li>;
+                                })}
+                            </ul>
+                            <p>{project.description}</p>
+                            <div class={styles.links}>
+                                <a
+                                    href={project.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <i class="fas fa-external-link-alt" />
+                                </a>
+                                <a
+                                    href={project.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <i class="fab fa-github" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>;
+        })
+    }
+</div>
