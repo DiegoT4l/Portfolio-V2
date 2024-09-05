@@ -20,8 +20,8 @@ const { title, description } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
-		<div class="absolute top-0 z-[-2] h-screen w-screen backg"></div>
+	<body class="relative text-white">
+		<div class="absolute top-0 bottom-0 z-[-2] min-h-screen w-screen backg"></div>
 		<Header />
 		<slot />
 		<Footer />

@@ -8,9 +8,8 @@ import EmailIcon from "../icons/Email.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Experience from "../components/Experience/Experience.astro";
 import BriefIcon from "../icons/Brief.astro";
-import CometIcon from "../icons/Comet.astro";
 import CheckIcon from "../icons/Check.astro";
-import Projects from "../components/PersonalProjects/Projects.astro";
+import Projects from "../components/Projects.astro";
 ---
 
 <Layout
@@ -54,9 +53,9 @@ Conoce más sobre mi trabajo y proyectos en mi portafolio.
 					<GitHubIcon class="size-4 md:size-6" />
 					<span>GitHub</span>
 				</SocialPill>
-				<SocialPill href="mailto:lopez.diiego.107@gmail.com">
+				<SocialPill href="mailto:contact@diegot4l.com">
 					<EmailIcon class="size-4 md:size-6" />
-					<span>diegot4l@gmail.com</span>
+					<span>contact@diegot4l.com</span>
 				</SocialPill>
 			</nav>
 		</SectionContainer>
@@ -79,7 +78,9 @@ Conoce más sobre mi trabajo y proyectos en mi portafolio.
 				Proyectos Personales
 			</h2>
 			<hr />
-			<Projects />
+			<div class="flex justify-center">
+				<Projects />
+			</div>
 		</SectionContainer>
 	</main>
 </Layout>
