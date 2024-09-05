@@ -1,5 +1,32 @@
+---
+const NAV_ITEMS = [
+    { name: "Inicio", href: "#hero", label: "hero" },
+    { name: "Experiencia", href: "#experience", label: "experience" },
+    { name: "Proyectos", href: "#projects", label: "projects" },
+    { name: "Sobre mí", href: "#about", label: "about" },
+    { name: "Contacto", href: "#contact", label: "contact" },
+];
+---
+
+<style>
+    nav {
+        @apply bg-gray-800/20 rounded-full shadow-lg ring-1 backdrop-blur ring-white/10;
+        animation: nav-shadown 1s linear both;
+        animation-timeline: scroll();
+        animation-range: 0 100px;
+    }
+    @keyframes nav-shadown {
+        0% {
+            @apply bg-gray-800/0;
+        }
+        to {
+            @apply shadow-lg ring-1 backdrop-blur ring-white/10;
+        }
+    }
+</style>
+
 <header
-    class="flex flex-col md:flex-row justify-between items-center py-5 md:w-[1120px] mx-auto animate-blurred-fade-in"
+    class="fixed right-4 left-4 py-8 z-10 flex flex-col md:flex-row justify-between items-center md:w-[1120px] mx-auto animate-blurred-fade-in"
 >
     <div class="flex justify-between items-center">
         <img
@@ -10,27 +37,67 @@
         <button class="h-6 md:hidden" id="hamburger">☰</button>
     </div>
 
-    <nav class="flex flex-col md:flex-row gap-x-10 h-6">
-        <a
-            class="hover:bg-sky-200 hover:text-black hover:border-black hover:animate-tilt px-2 rounded-full transition duration-300 ease-in-out"
-            href="#">Inicio</a
-        >
-        <a
-            class="hover:bg-sky-200 hover:text-black hover:border-black hover:animate-tilt px-2 rounded-full transition duration-300 ease-in-out"
-            href="#experience">Experiencia</a
-        >
-        <a
-            class="hover:bg-sky-200 hover:text-black hover:border-black hover:animate-tilt px-2 rounded-full transition duration-300 ease-in-out"
-            href="#projects">Proyectos</a
-        >
-        <a
-            class="hover:bg-sky-200 hover:text-black hover:border-black hover:animate-tilt px-2 rounded-full transition duration-300 ease-in-out"
-            href="#about">Sobre mí</a
-        >
-
-        <a
-            class="hover:bg-sky-200 hover:text-black hover:border-black hover:animate-tilt px-2 rounded-full transition duration-300 ease-in-out"
-            href="#contact">Contacto</a
-        >
+    <nav class="flex flex-col md:flex-row gap-x-10 h-8 items-center px-4 rounded-md">
+        {
+            NAV_ITEMS.map(({ name, href, label }) => (
+                <a
+                    class="hover:bg-sky-200 hover:text-black hover:border-black hover:animate-tilt p-1 rounded-full transition duration-300 ease-in-out"
+                    aria-label={label}
+                    href={href}
+                >
+                    {name}
+                </a>
+            ))
+        }
     </nav>
 </header>
+
+<script>
+    document.addEventListener("astro:page-load", () => {
+        const sections = document.querySelectorAll("section");
+        const navItems = document.querySelectorAll("header nav a");
+
+        const callback = (entries: any[]) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    navItems.forEach((item) => {
+                        if (
+                            item.getAttribute("aria-label") == entry.target.id
+                        ) {
+                            item.classList.add("bg-sky-200");
+                            item.classList.add("text-black");
+                            item.classList.add("border-black");
+                            item.classList.add("animate-tilt");
+                        } else {
+                            item.classList.remove("bg-sky-200");
+                            item.classList.remove("text-black");
+                            item.classList.remove("border-black");
+                            item.classList.remove("animate-tilt");
+                        }
+                    });
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(callback, {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.3,
+        });
+
+        sections.forEach((section) => {
+            observer.observe(section);
+        });
+
+        // Cleanup function
+        document.onvisibilitychange = () => {
+            if (document.visibilityState === "hidden") {
+                observer.disconnect();
+            } else {
+                sections.forEach((section) => {
+                    observer.observe(section);
+                });
+            }
+        };
+    });
+</script>
