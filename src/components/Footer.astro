@@ -1,159 +1,87 @@
+---
+const SOCIALS = [
+    {
+        name: "Behance",
+        url: "https://www.behance.com/diegolpezt1",
+        pictureSrc: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/behance.svg"
+    },
+    {
+        name: "CodeSandbox",
+        url: "https://codesandbox.io/u/diegot4l",
+        pictureSrc: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/codesandbox-dark.svg"
+    },
+    {
+        name: "Discord",
+        url: "https://discord.com/users/diegot4l",
+        pictureSrc: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/discord.svg"
+    },
+    {
+        name: "GitHub",
+        url: "https://www.github.com/diegot4l",
+        pictureSrc: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github-dark.svg"
+    },
+    {
+        name: "Instagram",
+        url: "http://www.instagram.com/diegot4l",
+        pictureSrc: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/instagram.svg"
+    },
+    {
+        name: "LinkedIn",
+        url: "https://www.linkedin.com/in/diegot4l",
+        pictureSrc: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/linkedin-dark.svg"
+    },
+    {
+        name: "StackOverflow",
+        url: "https://www.stackoverflow.com/users/22413142/diegot4l",
+        pictureSrc: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/stackoverflow.svg"
+    },
+    {
+        name: "Twitter",
+        url: "https://www.x.com/diegot4l",
+        pictureSrc: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/twitter-dark.svg"
+    },
+    {
+        name: "Threads",
+        url: "https://www.threads.net/@diegot4l",
+        pictureSrc: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/threads-dark.svg"
+    }
+]
+---
+
 <footer class="bg-gray-900">
     <div class="mx-auto w-full max-w-screen-xl">
         <div
             class="px-4 py-6 bg-gray-900 md:flex md:items-center md:justify-between"
         >
             <span class="text-sm text-gray-300 sm:text-center"
-                >© 2023 <a href="https://github.com/DiegoT4l">DiegoT4l</a>.
+                >© 2023 <a href={SOCIALS[3].url} target="_blank" rel="noreferrer">DiegoT4l</a>.
                 Todos los derechos reservados.
             </span>
             <div
                 class="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse"
             >
+            {
+                SOCIALS.map(({ name, url, pictureSrc }) =>(
                     <a
-                        href="https://www.behance.com/diegolpezt1"
+                        href={url}
                         target="_blank"
                         rel="noreferrer"
+                        title={name}
                     >
                         <picture>
                             <source
-                                srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/behance.svg"
+                                srcset={pictureSrc}
                             />
                             <img
-                                src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/behance.svg"
+                                src={pictureSrc}
                                 width="20"
                                 height="20"
                             />
                         </picture>
                     </a>
-                    <a
-                        href="https://codesandbox.io/u/diegot4l"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <picture>
-                            <source
-                                srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/codesandbox-dark.svg"
-                            />
-                            <img
-                                src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/codesandbox.svg"
-                                width="20"
-                                height="20"
-                            />
-                        </picture>
-                    </a>
-                    <a
-                        href="https://discord.com/users/diegot4l"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <picture>
-                            <source
-                                srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/discord.svg"
-                            />
-                            <img
-                                src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/discord.svg"
-                                width="20"
-                                height="20"
-                            />
-                        </picture>
-                    </a>
-                    <a
-                        href="https://www.github.com/diegot4l"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <picture>
-                            <source
-                                srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github-dark.svg"
-                            />
-                            <img
-                                src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github.svg"
-                                width="20"
-                                height="20"
-                            />
-                        </picture>
-                    </a>
-                    <a
-                        href="http://www.instagram.com/diegot4l"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <picture>
-                            <source
-                                srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/instagram.svg"
-                            />
-                            <img
-                                src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/instagram.svg"
-                                width="20"
-                                height="20"
-                            />
-                        </picture>
-                    </a>
-                    <a
-                        href="https://www.linkedin.com/in/diegot4l"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <picture>
-                            <source
-                                srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/linkedin-dark.svg"
-                            />
-                            <img
-                                src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/linkedin.svg"
-                                width="20"
-                                height="20"
-                            />
-                        </picture>
-                    </a>
-                    <a
-                        href="https://www.stackoverflow.com/users/22413142/diegot4l"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <picture>
-                            <source
-                                srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/stackoverflow.svg"
-                            />
-                            <img
-                                src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/stackoverflow.svg"
-                                width="20"
-                                height="20"
-                            />
-                        </picture>
-                    </a>
-                    <a
-                        href="https://www.x.com/diegot4l"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <picture>
-                            <source
-                                srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/twitter-dark.svg"
-                            />
-                            <img
-                                src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/twitter.svg"
-                                width="20"
-                                height="20"
-                            />
-                        </picture>
-                    </a>
-                    <a
-                        href="https://www.threads.net/@diegot4l"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <picture>
-                            <source
-                                srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/threads-dark.svg"
-                            />
-                            <img
-                                src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/threads.svg"
-                                width="20"
-                                height="20"
-                            />
-                        </picture>
-                    </a>
+                ))
+            }
+                    
             </div>
         </div>
     </div>

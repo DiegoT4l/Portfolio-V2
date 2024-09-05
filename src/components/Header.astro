@@ -23,6 +23,9 @@ const NAV_ITEMS = [
             @apply shadow-lg ring-1 backdrop-blur ring-white/10;
         }
     }
+    .active-link {
+        @apply bg-sky-200 text-black;
+    }
 </style>
 
 <header
@@ -53,51 +56,25 @@ const NAV_ITEMS = [
 </header>
 
 <script>
-    document.addEventListener("astro:page-load", () => {
+    document.addEventListener("scroll", () => {
         const sections = document.querySelectorAll("section");
-        const navItems = document.querySelectorAll("header nav a");
+        const navLinks = document.querySelectorAll("header nav a");
 
-        const callback = (entries: any[]) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    navItems.forEach((item) => {
-                        if (
-                            item.getAttribute("aria-label") == entry.target.id
-                        ) {
-                            item.classList.add("bg-sky-200");
-                            item.classList.add("text-black");
-                            item.classList.add("border-black");
-                            item.classList.add("animate-tilt");
-                        } else {
-                            item.classList.remove("bg-sky-200");
-                            item.classList.remove("text-black");
-                            item.classList.remove("border-black");
-                            item.classList.remove("animate-tilt");
-                        }
-                    });
-                }
-            });
-        };
+        let actualSection = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
 
-        const observer = new IntersectionObserver(callback, {
-            root: null,
-            rootMargin: "0px",
-            threshold: 0.3,
-        });
-
-        sections.forEach((section) => {
-            observer.observe(section);
-        });
-
-        // Cleanup function
-        document.onvisibilitychange = () => {
-            if (document.visibilityState === "hidden") {
-                observer.disconnect();
-            } else {
-                sections.forEach((section) => {
-                    observer.observe(section);
-                });
+            if (window.scrollY >= sectionTop - sectionHeight / 3) {
+                actualSection = section.id;
             }
-        };
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active-link');
+            if (link.getAttribute("aria-label") === `${actualSection}`) {
+                link.classList.add('active-link');
+            }
+        });
     });
 </script>
