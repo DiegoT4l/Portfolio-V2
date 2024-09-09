@@ -1,5 +1,6 @@
 ---
 import "@fontsource-variable/onest";
+import '@fontsource-variable/suse'
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { ViewTransitions } from "astro:transitions"
@@ -29,6 +30,11 @@ const { title, description } = Astro.props;
 		<slot />
 		<Footer />
 		<script is:inline src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
+		<script
+	src="https://platform.linkedin.com/badges/js/profile.js"
+	async
+	defer
+	type="text/javascript"></script>
 	</body>
 </html>
 <style is:global>
@@ -36,7 +42,7 @@ const { title, description } = Astro.props;
 		color-scheme: light dark;
 	}
 	html {
-		font-family: "Onest Variable", sans-serif;
+		font-family: "SUSE Variable", sans-serif;
 		scroll-behavior: smooth;
 	}
 	@media ((prefers-reduced-motion: reduce)) {
@@ -51,6 +57,9 @@ const { title, description } = Astro.props;
         min-height: 100vh;
         overscroll-behavior: none;
     }
+	h1, h2, h3, h4, h5, h6 {
+		font-family: "Onest Variable", sans-serif;
+	}
 	hr {
 		height: 0.1rem;
 		border: 0;
