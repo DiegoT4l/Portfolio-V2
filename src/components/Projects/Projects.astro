@@ -4,6 +4,9 @@ import NextJS from "../../icons/NextJS.astro";
 import Tailwind from "../../icons/Tailwind.astro";
 import Link from "../../icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
+import Bootstrap from "../../icons/Bootstrap.astro";
+import JQuery from "../../icons/JQuery.astro";
+import Sass from "../../icons/Sass.astro";
 
 const TAGS = {
     NEXT: {
@@ -15,6 +18,21 @@ const TAGS = {
         name: "Tailwind CSS",
         class: "bg-[#003159] text-white",
         icon: Tailwind,
+    },
+    BOOTSTRAP: {
+        name: "Bootstrap",
+        class: "bg-[#7952b3] text-white",
+        icon: Bootstrap,
+    },
+    JQUERY: {
+        name: "jQuery",
+        class: "bg-[#0769ad] text-white",
+        icon: JQuery,
+    },
+    SASS: {
+        name: "Sass",
+        class: "bg-[#cc6699] text-white",
+        icon: Sass,
     },
 };
 const PROJECTS = [
@@ -28,12 +46,13 @@ const PROJECTS = [
         tags: [TAGS.NEXT, TAGS.TAILWIND],
     },
     {
-        title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+        title: "Dashboard Tasks - Designed to efficiently manage your activities. ",
         description:
-            "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-        link: "https://adventjs.dev",
-        image: "/assets/images/project_licenses.webp",
-        tags: [TAGS.NEXT, TAGS.TAILWIND],
+            "Task board that allows you to create, edit, delete, and mark tasks as completed. It is designed to efficiently manage your daily activities. ",
+        link: "https://dashtask.diegot4l.com/",
+        github: "https://github.com/DiegoT4l/dashboard-tasks",
+        image: "/assets/images/project_dashtask.webp",
+        tags: [TAGS.BOOTSTRAP, TAGS.JQUERY, TAGS.SASS],
     },
 ];
 ---
