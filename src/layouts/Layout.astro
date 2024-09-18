@@ -1,9 +1,11 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 import "@fontsource-variable/onest";
-import '@fontsource-variable/suse'
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { ViewTransitions } from "astro:transitions"
+import "@fontsource-variable/suse";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import Contact from "@/components/Contact.astro";
+
 interface Props {
 	title: string;
 	description: string;
@@ -20,23 +22,21 @@ const { title, description } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<script src="../../node_modules/flowbite/dist/flowbite.min.js" defer></script>
 		<title>{title}</title>
 		<ViewTransitions />
 	</head>
 
 	<body class="relative text-white">
-		<div class="absolute top-0 bottom-0 z-[-2] min-h-screen w-screen backg"></div>
+		<div class="absolute top-0 bottom-0 z-[-2] min-h-screen w-screen backg">
+		</div>
 		<Header />
 		<slot />
+		<Contact />
 		<Footer />
-		<script is:inline src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
-		<script
-	src="https://platform.linkedin.com/badges/js/profile.js"
-	async
-	defer
-	type="text/javascript"></script>
 	</body>
 </html>
+
 <style is:global>
 	:root {
 		color-scheme: light dark;
@@ -51,13 +51,18 @@ const { title, description } = Astro.props;
 		}
 	}
 	body {
-        color: rgba(255, 255, 255, 0.9);
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        overscroll-behavior: none;
-    }
-	h1, h2, h3, h4, h5, h6 {
+		color: rgba(255, 255, 255, 0.9);
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+		overscroll-behavior: none;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
 		font-family: "Onest Variable", sans-serif;
 	}
 	hr {
@@ -148,3 +153,15 @@ const { title, description } = Astro.props;
 		transition-delay: 0s, calc(0s + 0.35s);
 	}
 </style>
+
+<script is:inline>
+	import { Drawer } from "flowbite";
+
+		const drawerElement = document.getElementById("drawer");
+		const options = { placement: "right", backdrop: true };
+
+		if (drawerElement) {
+			const drawer = new Drawer(drawerElement, options);
+			drawer.show();
+		}
+</script>

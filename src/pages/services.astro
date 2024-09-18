@@ -1,0 +1,27 @@
+---
+import ServicesComponent from "@components/Services.astro";
+import SectionContainer from "@components/SectionContainer.astro";
+import TitleSection from "@components/TitleSection.astro";
+import Layout from "@/layouts/Layout.astro";
+import CometIcon from "@icons/Comet.astro";
+---
+
+<Layout
+	title="DiegoT4l Portfolio - Desarrollador y Programador web y UI"
+	description=`Desarrollador web y UI con más de 2 años de experiencia. 
+Especializado en creación de webs e interfaces únicas y atractivas.
+Conoce más sobre mi trabajo y proyectos en mi portafolio.
+`
+>
+<main class="px-4 mt-32">
+    <SectionContainer id="services" class="pb-24">
+        <TitleSection title="Mis Servicios">
+            <CometIcon class="size-8" />
+        </TitleSection>
+        <hr />
+        <div class="flex justify-center">
+            <ServicesComponent />
+        </div>
+    </SectionContainer>
+</main>
+</Layout>

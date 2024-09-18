@@ -1,10 +1,10 @@
 ---
 const NAV_ITEMS = [
-    { name: "Experiencia", href: "#experience", label: "experience" },
-    { name: "Proyectos", href: "#projects", label: "projects" },
-    { name: "Sobre mí", href: "#about", label: "about" },
-    { name: "Servicios", href: "#services", label: "services" },
-    { name: "Contacto", href: "#contact", label: "contact" },
+    { name: "Experiencia", href: "/#experience", label: "experience" },
+    { name: "Proyectos", href: "/#projects", label: "projects" },
+    { name: "Sobre mí", href: "/#about", label: "about" },
+    { name: "Servicios", href: "/services", label: "services" },
+    { name: "Contacto", href: "/#contact", label: "contact" },
 ];
 ---
 
@@ -32,7 +32,7 @@ const NAV_ITEMS = [
     class="fixed right-4 left-4 py-8 z-10 flex flex-col md:flex-row justify-between items-center md:w-[1120px] mx-auto animate-blurred-fade-in"
 >
     <div class="flex justify-between items-center">
-        <a href="#hero">
+        <a href="/#hero">
             <img
                 class="mr-[16rem] rounded-full size-9 md:size-12"
                 src="/assets/images/diegot4l.webp"
@@ -46,8 +46,21 @@ const NAV_ITEMS = [
     <nav
         class="flex flex-col md:flex-row gap-x-2 h-8 items-center rounded-md"
     >
-        {
-            NAV_ITEMS.map(({ name, href, label }) => (
+        {NAV_ITEMS.map(({ name, href, label }) => {
+            if (name === "Contacto") {
+                return (
+                    <button
+                        class="hover:bg-sky-200 hover:text-black hover:border-black hover:animate-tilt p-1 rounded-full transition duration-300 ease-in-out"
+                        aria-label={label}
+                        data-drawer-target="drawer-contact"
+                        data-drawer-show="drawer-contact"
+                        type="button"
+                    >
+                        {name}
+                    </button>
+                );
+            }
+            return (
                 <a
                     class="hover:bg-sky-200 hover:text-black hover:border-black hover:animate-tilt p-1 rounded-full transition duration-300 ease-in-out"
                     aria-label={label}
@@ -55,8 +68,8 @@ const NAV_ITEMS = [
                 >
                     {name}
                 </a>
-            ))
-        }
+            );
+        })}
     </nav>
 </header>
 
