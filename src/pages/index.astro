@@ -4,6 +4,7 @@ import SectionContainer from "../components/SectionContainer.astro";
 import Experience from "../components/Experience/Experience.astro";
 import BriefIcon from "../icons/Brief.astro";
 import CodeIcon from "../icons/Code.astro";
+import CheckIcon from "@/icons/Check.astro";
 import Projects from "../components/Projects/Projects.astro";
 import Hero from "@/components/Hero.astro";
 import TitleSection from "@/components/TitleSection.astro";
@@ -41,23 +42,13 @@ Conoce más sobre mi trabajo y proyectos en mi portafolio.
 			</div>
 		</SectionContainer>
 
-		<SectionContainer>
-			<div
-				class="badge-base LI-profile-badge"
-				data-locale="es_ES"
-				data-size="medium"
-				data-theme="dark"
-				data-type="VERTICAL"
-				data-vanity="diegot4l"
-				data-version="v1"
-			>
-				<a
-					class="badge-base__link LI-simple-link"
-					href="https://mx.linkedin.com/in/diegot4l?trk=profile-badge"
-					>Diego Talamantes</a>
+		<SectionContainer id="about" class="pb-24">
+			<TitleSection title="Sobre mí">
+				<CheckIcon class="size-8" />
+			</TitleSection>
+			<hr />
+			<div class="flex justify-center">
 			</div>
 		</SectionContainer>
 	</main>
 </Layout>
-
-

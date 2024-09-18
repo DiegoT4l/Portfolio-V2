@@ -1,9 +1,9 @@
 ---
 const NAV_ITEMS = [
-    { name: "Inicio", href: "#hero", label: "hero" },
     { name: "Experiencia", href: "#experience", label: "experience" },
     { name: "Proyectos", href: "#projects", label: "projects" },
     { name: "Sobre mí", href: "#about", label: "about" },
+    { name: "Servicios", href: "#services", label: "services" },
     { name: "Contacto", href: "#contact", label: "contact" },
 ];
 ---
@@ -32,15 +32,20 @@ const NAV_ITEMS = [
     class="fixed right-4 left-4 py-8 z-10 flex flex-col md:flex-row justify-between items-center md:w-[1120px] mx-auto animate-blurred-fade-in"
 >
     <div class="flex justify-between items-center">
-        <img
-            class="mr-[16rem] rounded-full size-9 md:size-12"
-            src="/assets/images/diegot4l.webp"
-            alt="diegot4l picture"
-        />
+        <a href="#hero">
+            <img
+                class="mr-[16rem] rounded-full size-9 md:size-12"
+                src="/assets/images/diegot4l.webp"
+                alt="diegot4l picture"
+            />
+        </a>
+
         <button class="h-6 md:hidden" id="hamburger">☰</button>
     </div>
 
-    <nav class="flex flex-col md:flex-row gap-x-10 h-8 items-center px-4 rounded-md">
+    <nav
+        class="flex flex-col md:flex-row gap-x-10 h-8 items-center px-4 rounded-md"
+    >
         {
             NAV_ITEMS.map(({ name, href, label }) => (
                 <a
@@ -60,8 +65,8 @@ const NAV_ITEMS = [
         const sections = document.querySelectorAll("section");
         const navLinks = document.querySelectorAll("header nav a");
 
-        let actualSection = '';
-        sections.forEach(section => {
+        let actualSection = "";
+        sections.forEach((section) => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
 
@@ -70,10 +75,10 @@ const NAV_ITEMS = [
             }
         });
 
-        navLinks.forEach(link => {
-            link.classList.remove('active-link');
+        navLinks.forEach((link) => {
+            link.classList.remove("active-link");
             if (link.getAttribute("aria-label") === `${actualSection}`) {
-                link.classList.add('active-link');
+                link.classList.add("active-link");
             }
         });
     });

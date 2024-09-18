@@ -1,42 +1,34 @@
 ---
 import Badge from "@/components/Badge.astro";
 import SocialPill from "@/components/SocialPill.astro";
-import LinkedInIcon from "@/icons/LinkedIn.astro";
-import GitHubIcon from "@/icons/GitHub.astro";
-import EmailIcon from "@/icons/Email.astro";
+import BriefIcon from "@/icons/Brief.astro";
+import CodeIcon from "@/icons/Code.astro";
 ---
 
 <h1
     class="text-white mx-auto text-2xl md:text-5xl font-bold flex flex-row gap-x-4 pb-6 md:pb-10"
 >
     Hey, Soy <span>DiegoT4l!</span>
-    <Badge
-        href="https://www.linkedin.com/in/diegot4l/"
-        class="flex justify-center items-center transition md:hover:scale-105"
-    >
-        Disponible
+    <Badge>
+        <a href="https://www.linkedin.com/in/diegot4l/" target="_blank" rel="noopener noreferrer">Disponible</a>
     </Badge>
 </h1>
 <h2 class="mx-auto text-lg md:text-2xl text-wrap max-w-[70rem]">
-    <span>+2 Años de Experiencia.</span><span class="text-yellow-200/90"
-        >Desarrollador Web/UI.
+    <span>+2 Años de Experiencia Desarrollando Aplicaciones Web. </span><span class="text-yellow-200/90"
+        >Desarrollador Web.
     </span>
-    <span class="text-red-200/90">México, CDMX.</span><span class="opacity-75"
-        >Especializado en creación de webs e interfaces únicas y atractivas.</span
+    <span class="text-red-200/90">México, CDMX. </span><span class="opacity-75"
+        >Especializado en desarrollar aplicaciones web y optimizar su rendimiento, brindando soluciones a medida.</span
     >
 </h2>
 
 <nav class="flex gap-4 mt-8 flex-wrap">
-    <SocialPill href="https://www.linkedin.com/in/diegot4l/">
-        <LinkedInIcon class="size-4 md:size-6" />
-        <span>LinkedIn</span>
+    <SocialPill href="#projects">
+        <CodeIcon class="size-4 md:size-6" />
+        <span>Ver Proyectos</span>
     </SocialPill>
-    <SocialPill href="https://github.com/DiegoT4l">
-        <GitHubIcon class="size-4 md:size-6" />
-        <span>GitHub</span>
-    </SocialPill>
-    <SocialPill href="mailto:contact@diegot4l.com">
-        <EmailIcon class="size-4 md:size-6" />
-        <span>contact@diegot4l.com</span>
+    <SocialPill href="#contact">
+        <BriefIcon class="size-4 md:size-6" />
+        <span>Contrátame</span>
     </SocialPill>
 </nav>

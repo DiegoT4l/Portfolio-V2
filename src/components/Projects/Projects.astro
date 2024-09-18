@@ -1,18 +1,32 @@
 ---
 import GitHub from "../../icons/GitHub.astro";
-import NextJS from "../../icons/NextJS.astro";
+import Gulp from "../../icons/Gulp.astro";
 import Tailwind from "../../icons/Tailwind.astro";
 import Link from "../../icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
 import Bootstrap from "../../icons/Bootstrap.astro";
 import JQuery from "../../icons/JQuery.astro";
 import Sass from "../../icons/Sass.astro";
+import Html from "../../icons/Html.astro";
+import CSS from "../../icons/CSS.astro";
+import JavaScript from "../../icons/JavaScript.astro";
+
 
 const TAGS = {
-    NEXT: {
-        name: "Next.js",
-        class: "bg-black text-white",
-        icon: NextJS,
+    HTML : {
+        name: "HTML",
+        class: "bg-[#f16529] text-white",
+        icon: Html,
+    },
+    CSS: {
+        name: "CSS",
+        class: "bg-[#264de4] text-white",
+        icon: CSS,
+    },
+    JS: {
+        name: "JavaScript",
+        class: "bg-[#f0db4f] text-black",
+        icon: JavaScript,
     },
     TAILWIND: {
         name: "Tailwind CSS",
@@ -34,17 +48,13 @@ const TAGS = {
         class: "bg-[#cc6699] text-white",
         icon: Sass,
     },
+    GULP: {
+        name: "Gulp",
+        class: "bg-[#cf4647] text-white",
+        icon: Gulp,
+    },
 };
 const PROJECTS = [
-    {
-        title: "SVGL - A beautiful library with SVG logos",
-        description:
-            "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-        link: "https://svgl.vercel.app/",
-        github: "https://github.com/pheralb/svgl",
-        image: "/assets/images/project_blogcafe.webp",
-        tags: [TAGS.NEXT, TAGS.TAILWIND],
-    },
     {
         title: "Dashboard Tasks - Designed to efficiently manage your activities. ",
         description:
@@ -52,8 +62,26 @@ const PROJECTS = [
         link: "https://dashtask.diegot4l.com/",
         github: "https://github.com/DiegoT4l/dashboard-tasks",
         image: "/assets/images/project_dashtask.webp",
-        tags: [TAGS.BOOTSTRAP, TAGS.JQUERY, TAGS.SASS],
+        tags: [TAGS.BOOTSTRAP, TAGS.JQUERY, TAGS.SASS]
     },
+    {
+        title: "Techno and EDM Festival - A landing page for a music  festival. ",
+        description:
+            "Landing page for a music festival. It has a responsive design and is optimized for mobile devices. ",
+        link: "https://festmusic.diegot4l.com/",
+        github: "https://github.com/DiegoT4l/Music-Festival-Project",
+        image: "/assets/images/project_festmusic.webp",
+        tags: [TAGS.SASS, TAGS.GULP]
+    },
+    {
+        title: "BlogDeCafe - A blog about coffee. ",
+        description:
+            "Blog about coffee. It has a responsive design and is optimized for mobile devices. Especially for coffee lovers. ",
+        link: "https://blogcafe.diegot4l.com/",
+        github: "https://github.com/DiegoT4l/BlogdeCafe",
+        image: "/assets/images/project_blogcafe.webp",
+        tags : [TAGS.HTML, TAGS.CSS, TAGS.JS]
+    }
 ];
 ---
 
