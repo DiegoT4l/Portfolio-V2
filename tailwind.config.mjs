@@ -8,7 +8,11 @@ export default {
 	],
 	darkMode: 'class',
 	theme: {
-		extend: {},
+		extend: {
+			fontFamily: {
+				"onest": ["Onest Variable", "sans-serif"],
+			}
+		},
 	},
 	plugins: [animations, require('flowbite/plugin')],
 }
