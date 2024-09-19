@@ -4,7 +4,6 @@ import "@fontsource-variable/onest";
 import "@fontsource-variable/suse";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import Contact from "@/components/Contact.astro";
 
 interface Props {
 	title: string;
@@ -22,7 +21,7 @@ const { title, description } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<script src="../../node_modules/flowbite/dist/flowbite.min.js" defer></script>
+		<script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
 		<title>{title}</title>
 		<ViewTransitions />
 	</head>
@@ -32,7 +31,6 @@ const { title, description } = Astro.props;
 		</div>
 		<Header />
 		<slot />
-		<Contact />
 		<Footer />
 	</body>
 </html>
@@ -153,15 +151,3 @@ const { title, description } = Astro.props;
 		transition-delay: 0s, calc(0s + 0.35s);
 	}
 </style>
-
-<script is:inline>
-	import { Drawer } from "flowbite";
-
-		const drawerElement = document.getElementById("drawer");
-		const options = { placement: "right", backdrop: true };
-
-		if (drawerElement) {
-			const drawer = new Drawer(drawerElement, options);
-			drawer.show();
-		}
-</script>

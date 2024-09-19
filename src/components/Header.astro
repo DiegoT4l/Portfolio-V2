@@ -4,7 +4,7 @@ const NAV_ITEMS = [
     { name: "Proyectos", href: "/#projects", label: "projects" },
     { name: "Sobre mí", href: "/#about", label: "about" },
     { name: "Servicios", href: "/services", label: "services" },
-    { name: "Contacto", href: "/#contact", label: "contact" },
+    { name: "Contacto", href: "/contact", label: "contact" },
 ];
 ---
 
@@ -47,19 +47,6 @@ const NAV_ITEMS = [
         class="flex flex-col md:flex-row gap-x-2 h-8 items-center rounded-md"
     >
         {NAV_ITEMS.map(({ name, href, label }) => {
-            if (name === "Contacto") {
-                return (
-                    <button
-                        class="hover:bg-sky-200 hover:text-black hover:border-black hover:animate-tilt p-1 rounded-full transition duration-300 ease-in-out"
-                        aria-label={label}
-                        data-drawer-target="drawer-contact"
-                        data-drawer-show="drawer-contact"
-                        type="button"
-                    >
-                        {name}
-                    </button>
-                );
-            }
             return (
                 <a
                     class="hover:bg-sky-200 hover:text-black hover:border-black hover:animate-tilt p-1 rounded-full transition duration-300 ease-in-out"
