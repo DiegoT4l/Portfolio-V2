@@ -4,55 +4,46 @@
     class="transition-transform w-screen"
     aria-labelledby="drawer-contact-label"
 >
-    <form class="mb-6" name="contact">
+    <form class="mb-6" name="contact" action="https://formspree.io/f/xleyzrnv" method="POST">
         <div class="mb-6">
-            <label for="email" class="block mb-2 text-sm font-medium text-white"
-                >Your email</label
-            >
+            <label for="email" class="block mb-2 text-sm font-medium text-white">Your email</label>
             <input
                 type="email"
                 id="email"
+                name="email"
                 class="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-300 focus:border-blue-300"
                 placeholder="name@example.com"
                 required
             />
         </div>
         <div class="mb-6">
-            <label
-                for="subject"
-                class="block mb-2 text-sm font-medium text-white">Subject</label
-            >
+            <label for="subject" class="block mb-2 text-sm font-medium text-white">Subject</label>
             <input
                 type="text"
                 id="subject"
+                name="subject"
                 class="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-300 focus:border-blue-300"
                 placeholder="Let us know how we can help you"
                 required
             />
         </div>
         <div class="mb-6">
-            <label
-                for="message"
-                class="block mb-2 text-sm font-medium text-white"
-                >Your message</label
-            >
+            <label for="message" class="block mb-2 text-sm font-medium text-white">Your message</label>
             <textarea
                 id="message"
+                name="message"
                 rows="4"
                 class="block p-2.5 w-full text-sm rounded-lg border bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-300 focus:border-blue-300"
-                placeholder="Your message..."></textarea>
+                placeholder="Your message..."
+                required
+            ></textarea>
         </div>
         <button
-            form="contact"
             type="submit"
             class="text-black w-full focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 bg-blue-300 aria-disabled:bg-stone-300 aria-disabled:hover:bg-stone-300 aria-disabled:cursor-not-allowed hover:bg-blue-400 focus:outline-none block"
-            >Send message</button
-        >
+        >Send message</button>
     </form>
     <p class="mb-2 text-sm text-gray-400">
         <a href="#" class="hover:underline">contact@diegot4l.com</a>
-    </p>
-    <p class="text-sm text-gray-400">
-        <a href="#" class="hover:underline">212-456-7890</a>
     </p>
 </div>

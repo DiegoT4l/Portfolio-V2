@@ -3,37 +3,44 @@ import SectionContainer from "@components/SectionContainer.astro";
 import TitleSection from "@components/TitleSection.astro";
 import Layout from "@/layouts/Layout.astro";
 import ContactComponent from "@components/Contact.astro";
-import GithubIcon from "@/icons/Github.astro";
+import GithubIcon from "@icons/Github.astro";
 import TwitterIcon from "@icons/Twitter.astro";
 import LinkedinIcon from "@icons/Linkedin.astro";
 import ThreadsIcon from "@icons/Threads.astro";
+import InstagramIcon from "@icons/Instagram.astro";
 
 const SOCIALS = [
     {
         name: "LinkedIn",
         url: "https://www.linkedin.com/in/diegot4l/",
         icon: LinkedinIcon,
-        class: "bg-[#0a66c2] hover:bg-[#0a66c2]/90 focus:ring-gray-500 text-white",
+        class: "bg-[#0a66c2] hover:bg-[#0a66c2]/90 focus:ring-gray-500",
     },
     {
-        name: "Github",
+        name: "GitHub",
         url: "https://github.com/DiegoT4l",
         icon: GithubIcon,
-        class: "bg-[#fff] hover:bg-[#1da1f2]/90 focus:ring-gray-500 text-white",
+        class: "bg-[#24292F] hover:bg-[#050708]/30 focus:ring-gray-500",
+    },
+    {
+        name: "Instagram",
+        url: "https://www.instagram.com/diegot4l/",
+        icon: InstagramIcon,
+        class: "bg-gradient-to-r from-instagram-100 via-instagram-300 to-instagram-500 hover:bg-[#c13584]/90 focus:ring-gray-500",
     },
     {
         name: "Threads",
         url: "https://www.threads.net/@diegot4l",
         icon: ThreadsIcon,
-        class: "bg-[#1da1f2] hover:bg-[#1da1f2]/90 focus:ring-gray-500 text-white",
+        class: "bg-[#050708] hover:bg-[#050708]/30 focus:ring-[#050708]/50",
     },
     {
         name: "Twitter",
         url: "https://twitter.com/DiegoT4l",
         icon: TwitterIcon,
-        class: "bg-[#1da1f2] hover:bg-[#1da1f2]/90 focus:ring-gray-500 text-white",
+        class: "bg-[#1da1f2] hover:bg-[#1da1f2]/90 focus:ring-gray-500",
     },
-]
+];
 ---
 
 <Layout
@@ -69,16 +76,19 @@ Conoce más sobre mi trabajo y proyectos en mi portafolio.
         <SectionContainer id="contact-socials" class="pb-20">
             <TitleSection title="Mis Redes Sociales" />
             <div class="flex-col justify-center">
-
-                {SOCIALS.map(({ name, url, icon: Icon, class: Class }) => (
-                    <a
-                        href={url}
-                        class={`text-white w-full focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex justify-center items-center ${Class} me-2 mb-2`}
-                    >
-                        <Icon class="w-4 h-4 me-2" />
-                        Follow Me on {name}
-                    </a>
-                ))}
+                {
+                    SOCIALS.map(({ name, url, icon: Icon, class: Class }) => (
+                        <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href={url}
+                            class={`text-white w-full focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex justify-center items-center ${Class} me-2 mb-2`}
+                        >
+                            <Icon class="w-4 h-4 me-2" />
+                            Follow Me on {name}
+                        </a>
+                    ))
+                }
             </div>
         </SectionContainer>
     </main>

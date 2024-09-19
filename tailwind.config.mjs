@@ -35,6 +35,15 @@ export default {
 			fontFamily: {
 				onest: ["Onest Variable", "sans-serif"],
 				suse: ["SUSE Variable", "sans-serif"],
+			},
+			colors: {
+				instagram: {
+					100: '#feda75',
+					200: '#fa7e1e',
+					300: '#d62976',
+					400: '#962fbf',
+					500: '#4f5bd5',
+				},
 			}
 		},
 	},
