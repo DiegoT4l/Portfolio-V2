@@ -9,8 +9,8 @@ const NAV_ITEMS = [
 ---
 
 <style>
-    nav {
-        @apply bg-gray-800/20 rounded-full shadow-lg ring-1 backdrop-blur ring-white/10;
+    .blur-bg {
+        @apply w-full h-full md:size-auto bg-gray-800/20 md:rounded-full shadow-lg ring-1 backdrop-blur ring-white/10;
         animation: nav-shadown 1s linear both;
         animation-timeline: scroll();
         animation-range: 0 100px;
@@ -34,17 +34,17 @@ const NAV_ITEMS = [
     <div class="flex justify-between items-center">
         <a href="/#hero">
             <img
-                class="mr-[16rem] rounded-full size-9 md:size-12"
+                class="mr-[16rem] rounded-full size-6 md:size-12"
                 src="/assets/images/diegot4l.webp"
                 alt="diegot4l picture"
             />
         </a>
 
-        <button class="h-6 md:hidden" id="hamburger">☰</button>
+        <button id="hamburger" class="size-6 md:hidden rounded-full bg-gray-800/20 ring-1 backdrop-blur ring-white/10 m-2 text-center">☰</button>
     </div>
 
     <nav
-        class="flex flex-col md:flex-row gap-x-2 h-8 items-center rounded-md"
+        id="principal-navbar" class="blur-bg hidden md:flex flex-col md:flex-row gap-x-2 h-8 items-center rounded-md"
     >
         {NAV_ITEMS.map(({ name, href, label }) => {
             return (
@@ -61,9 +61,39 @@ const NAV_ITEMS = [
 </header>
 
 <script>
+    //Mostrar u ocultar el navbar al hacer click en el botón de hamburguesa
+    const hamburger = document.getElementById("hamburger");
+    const nav = document.getElementById("principal-navbar");
+    const navLinks = document.querySelectorAll("header nav a");
+
+    hamburger.addEventListener("click", () => {
+        nav.classList.toggle("hidden");
+        nav.classList.toggle("flex");
+    });
+
+    //Cerrar el navbar al hacer scroll o hacer click en una de las opciones o hacer click fuera del navbar
+    window.addEventListener("scroll", () => {
+        nav.classList.add("hidden");
+        nav.classList.remove("flex");
+    });
+
+    navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            nav.classList.add("hidden");
+            nav.classList.remove("flex");
+        });
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!hamburger.contains(e.target) && !nav.contains(e.target)) {
+            nav.classList.add("hidden");
+            nav.classList.remove("flex");
+        }
+    });
+
     document.addEventListener("scroll", () => {
         const sections = document.querySelectorAll("section");
-        const navLinks = document.querySelectorAll("header nav a");
+        
 
         let actualSection = "";
         sections.forEach((section) => {
